@@ -1,4 +1,5 @@
 import React from 'react';
+import InputForm from './InputForm';
 class Board extends React.Component {
   /* renderSquare(i) {
     return (
@@ -10,7 +11,8 @@ class Board extends React.Component {
   } */
   render() {
     return (
-      null
+      <InputForm/>
       );
   }
 }
+export default Board;

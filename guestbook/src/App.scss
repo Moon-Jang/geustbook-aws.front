@@ -7,7 +7,9 @@ body {
 	margin : 0px;
 	padding : 0px;
 }
-
+.custom{
+	padding:0px;
+}
 #App {
 	#background {
 		position: fixed;
@@ -17,7 +19,7 @@ body {
 		background-color: green;
 	}
 	#wrapper{
-		max-width: 960px;
+		//max-width: 960px;
 		width: 100%;
 		margin : 0 auto;
 		#logo{
@@ -25,12 +27,62 @@ body {
 			height: 200px;
 			//background-image: url("./asset/logo.svg");
 		}
-		.container{
+		.container-fluid{
 			width: 100%;
 			height: 400px;
 			margin:0px;
+			padding:0px;
 			background-color: red;
+			.row{
+				height: 100%;
+				.space-area{
+					background-color: white;
+					height: 100%;
+				}
+				
+			}
+		}
+	}	
+}
+
+.InputFrom-wrapper{
+	border : 2.5px solid rgb(106, 106, 179);
+	border-style: solid;
+	border-left: 0px;
+	border-right: 0px;
+	margin : 15px;
+	padding-top: 20px;
+	padding-bottom: 20px;
+	background-color: whitesmoke;
+	form{	
+		.row{
+			padding-left: 15px;
+			.input-idPw-area{
+				input{
+					width : 100%;
+					margin-bottom: 5px;
+					height: 30px;
+				}
+			}
+			.input-text-area{
+				input{
+					width: 90%;
+					height:80px;
+				}
+			}
+			.register-btn-area{
+				display: flex;
+				justify-content: flex-end;
+				padding-top : 10px;
+				padding-right: 50px;
+				button{
+					width: 80px;
+					height: 30px;
+					border : 0;
+					background-color: rgb(106, 106, 179);
+					color : white;
+				}
+			}
 		}
 	}
-	
 }
