@@ -17,7 +17,7 @@ body {
   z-index: -1;
   width: 100%;
   height: 100%;
-  background-color: green;
+  background-color: white;
 }
 
 #App #wrapper {
@@ -32,10 +32,9 @@ body {
 
 #App #wrapper .container-fluid {
   width: 100%;
-  height: 400px;
   margin: 0px;
   padding: 0px;
-  background-color: red;
+  background-color: white;
 }
 
 #App #wrapper .container-fluid .row {
@@ -90,5 +89,29 @@ body {
   border: 0;
   background-color: #6a6ab3;
   color: white;
+}
+
+.Board-wrapper .head-area {
+  margin: 0px;
+  background-color: whitesmoke;
+  text-align: center;
+  border-top: 2.5px solid #6a6ab3;
+}
+
+.Board-wrapper .head-area .bno {
+  text-align: left;
+  padding-left: 3%;
+}
+
+.Posts-wrapper {
+  background-color: yellow;
+  margin: 0;
+  border-top: 1px solid #6a6ab3;
+  text-align: center;
+}
+
+.Posts-wrapper .bno {
+  text-align: left;
+  padding-left: 5%;
 }
 /*# sourceMappingURL=App.css.map */
