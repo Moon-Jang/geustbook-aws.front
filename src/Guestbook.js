@@ -32,6 +32,27 @@ class InputForm extends React.Component {
       );
   }
 }
+
+class Paging extends React.Component{
+  clickPage(pNum){
+    api.post("/read",{"page" : pNum}).then(
+      res => {
+        this.setState({contents : res.data});
+      }
+    );
+  }
+  render(){
+    return (
+      <div className="Paging-wrapper">
+        <ul>
+          <li><button>[{this.props.curPage}]</button></li>
+          <li><button onClick={this.clickPage(2)}>[{this.props.curPage+1}]</button></li>
+          <li><button>[{this.props.curPage+2}]</button></li>
+        </ul>
+      </div>
+    );
+  }
+}
 class Posts extends React.Component {
   render() {
     return (
@@ -50,6 +71,8 @@ class Guestbook extends React.Component {
     super(props);
     this.state = {
       contents: Array(10).fill({}),
+      curPage : 1,
+      maxPage : 99,
     };
   }
   componentDidMount(){
@@ -59,7 +82,7 @@ class Guestbook extends React.Component {
       }
     ); 
   }
-
+  
   render() {
     const contents = this.state.contents;
     const setPosts = contents.map( (cts,idx) => {
@@ -82,6 +105,9 @@ class Guestbook extends React.Component {
           {setPosts}
           <div className = "line"></div>
         </div>
+        <Paging
+          curPage ={this.state.curPage}
+        />
       </div>
       );
   }

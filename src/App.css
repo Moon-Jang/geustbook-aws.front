@@ -129,4 +129,29 @@ body {
 .line {
   border-top: 1px solid #6a6ab3;
 }
+
+.Paging-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-top: 30px;
+}
+
+.Paging-wrapper ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  list-style: none;
+}
+
+.Paging-wrapper ul li {
+  padding-right: 10px;
+  font-size: 16px;
+}
 /*# sourceMappingURL=App.css.map */

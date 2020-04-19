@@ -122,3 +122,18 @@ body {
 .line{
 	border-top : 1px solid rgb(106, 106, 179);
 }
+
+.Paging-wrapper{
+	display: flex;
+    justify-content: center;
+	align-items: center;
+	margin-top: 30px;
+	ul{
+		display: flex;
+		list-style: none;
+		li{
+			padding-right: 10px;
+			font-size: 16px;
+		}
+	}
+}
