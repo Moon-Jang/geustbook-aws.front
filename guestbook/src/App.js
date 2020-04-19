@@ -3,16 +3,15 @@ import './App.css';
 import classNames from 'classnames/bind';
 import styles from './App.css';
 import logo from './logo.svg';
-import Board from './Board';
-import InputForm from './InputForm';
+import Guestbook from './Guestbook';
 /* import axios from 'axios';
 
  const api = axios.create({
-    baseURL : "http://49.165.149.72:3000",
+    baseURL : "http://127.0.0.1:3000",
     header: {
       Authorization : 'bearer accessKey'
     }
-  }); */ 
+  });  */
 const st = classNames.bind(styles);
 function App() {
   return (
@@ -25,12 +24,7 @@ function App() {
         <div className="container-fluid">
           <div className={st('row','custom')}>
             <div className={st('col-md-1','space-area','custom')}></div>
-            <div className={st('col-md-10','context','custom')}>
-              <InputForm />
-              <Board 
-                //contents = {api.get()}
-              />
-            </div>
+            <Guestbook/>
             <div className={st('col-md-1','space-area','custom')}></div>
           </div>
         </div>

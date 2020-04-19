@@ -104,17 +104,29 @@ body {
 }
 
 .Posts-wrapper {
-  background-color: yellow;
+  background-color: white;
   margin: 0;
   height: 40px;
   border-top: 1px solid #6a6ab3;
   text-align: center;
-  padding-top: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   font-size: 14px;
 }
 
 .Posts-wrapper .bno {
   text-align: left;
   padding-left: 4%;
+}
+
+.line {
+  border-top: 1px solid #6a6ab3;
 }
 /*# sourceMappingURL=App.css.map */

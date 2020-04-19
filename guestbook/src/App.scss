@@ -104,15 +104,21 @@ body {
 }
 
 .Posts-wrapper{
-	background-color: yellow;
+	background-color: white;
 	margin:0;
 	height: 40px;
 	border-top: 1px solid rgb(106, 106, 179);
 	text-align: center;
-	padding-top: 10px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
 	font-size: 14px;
 	.bno{
 		text-align: left;
 		padding-left: 4%;
 	}
+}
+
+.line{
+	border-top : 1px solid rgb(106, 106, 179);
 }
