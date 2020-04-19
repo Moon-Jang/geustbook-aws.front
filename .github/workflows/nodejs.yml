@@ -36,5 +36,6 @@ jobs:
         aws-region: ap-northeast-2
  
     - run: aws s3 sync ./build s3://mjtest95/ 
+    - run: aws cloudfront create-invalidation --distribution-id E16FB887DO0LSA --paths "/*"
       env:
         CI: true
