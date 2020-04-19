@@ -37,10 +37,6 @@ body {
   background-color: white;
 }
 
-#App #wrapper .container-fluid .row {
-  height: 100%;
-}
-
 #App #wrapper .container-fluid .row .space-area {
   background-color: white;
   height: 100%;
@@ -94,8 +90,12 @@ body {
 .Board-wrapper .head-area {
   margin: 0px;
   background-color: whitesmoke;
+  height: 40px;
   text-align: center;
   border-top: 2.5px solid #6a6ab3;
+  padding-top: 10px;
+  font-weight: 600;
+  font-size: 16px;
 }
 
 .Board-wrapper .head-area .bno {
@@ -106,12 +106,15 @@ body {
 .Posts-wrapper {
   background-color: yellow;
   margin: 0;
+  height: 40px;
   border-top: 1px solid #6a6ab3;
   text-align: center;
+  padding-top: 10px;
+  font-size: 14px;
 }
 
 .Posts-wrapper .bno {
   text-align: left;
-  padding-left: 5%;
+  padding-left: 4%;
 }
 /*# sourceMappingURL=App.css.map */

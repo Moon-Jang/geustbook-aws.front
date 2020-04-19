@@ -33,7 +33,7 @@ body {
 			padding:0px;
 			background-color: white;
 			.row{
-				height: 100%;
+				
 				.space-area{
 					background-color: white;
 					height: 100%;
@@ -90,8 +90,12 @@ body {
 	.head-area{
 		margin : 0px;
 		background-color: whitesmoke;
+		height: 40px;
 		text-align: center;
 		border-top : 2.5px solid rgb(106, 106, 179);
+		padding-top: 10px;
+		font-weight: 600;
+		font-size: 16px;
 		.bno{
 			text-align: left;
 			padding-left: 3%;
@@ -102,10 +106,13 @@ body {
 .Posts-wrapper{
 	background-color: yellow;
 	margin:0;
+	height: 40px;
 	border-top: 1px solid rgb(106, 106, 179);
 	text-align: center;
+	padding-top: 10px;
+	font-size: 14px;
 	.bno{
 		text-align: left;
-		padding-left: 5%;
+		padding-left: 4%;
 	}
 }
