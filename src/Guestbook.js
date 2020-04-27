@@ -88,7 +88,7 @@ class Guestbook extends React.Component {
         'Content-Type': 'application/json',
         'Access-Control-Allow-Origin' : '*'
       },
-      body: JSON.stringify({page : 1})
+      body: JSON.stringify({page : 3})
     }).then(res =>  this.setState({contents : res.data}));
   }
   
