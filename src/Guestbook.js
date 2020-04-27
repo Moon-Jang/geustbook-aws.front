@@ -86,7 +86,7 @@ class Guestbook extends React.Component {
       headers: {
         'Accept': 'application/json',
         'Content-Type': 'application/json',
-        'Origin' : 'https://guestbook.test.moonjang.net',
+        'origin' : 'https://www.moonjang.net',
         'sec-fetch-mode': 'cors',
         'sec-fetch-site': 'cross-site',
         'abcd' : '1234',
