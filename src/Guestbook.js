@@ -81,7 +81,7 @@ class Guestbook extends React.Component {
         this.setState({contents : res.data});
       }
     );  */
-      fetch('https://moonjang.net/read', {
+      fetch('https://guestbook.test.moonjang.net/read', {
       method: 'POST',
       headers: {
         'Accept': 'application/json',
