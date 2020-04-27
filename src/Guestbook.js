@@ -76,7 +76,7 @@ class Guestbook extends React.Component {
     };
   }
   componentDidMount(){
-    api.post("/read",{"page" : "1"}).then(
+    api.post("/read",{"page" : 1}).then(
       res => {
         this.setState({contents : res.data});
       }
