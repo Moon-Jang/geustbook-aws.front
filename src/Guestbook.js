@@ -76,11 +76,20 @@ class Guestbook extends React.Component {
     };
   }
   componentDidMount(){
-    api.post("/read",{"page" : 1}).then(
+    /* api.post("/read",{"page" : 1}).then(
       res => {
         this.setState({contents : res.data});
       }
-    ); 
+    );  */
+      fetch('https://moonjang.net/read', {
+      method: 'POST',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json',
+        'Access-Control-Allow-Origin' : '*'
+      },
+      body: JSON.stringify({page : 1})
+    }).then(res =>  this.setState({contents : res.data}));
   }
   
   render() {
