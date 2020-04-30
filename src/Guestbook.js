@@ -5,8 +5,11 @@ import styles from './App.css';
 
  const api = axios.create({
     baseURL : "https://guestbook.test.moonjang.net",
+    withCredentials: true,
     header: {
-      Authorization : 'bearer accessKey'
+      Authorization : 'bearer accessKey',
+      'Accept': 'application/json',
+      'Content-Type': 'application/json',
     }
   }); 
   const st = classNames.bind(styles);
