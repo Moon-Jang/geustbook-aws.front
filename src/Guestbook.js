@@ -4,9 +4,9 @@ import styles from './App.css';
  import axios from 'axios';
 
  const api = axios.create({
-    baseURL : "https://guestbook.test.moonjang.net",
-    withCredentials: true,
-    header: {
+  baseURL : "https://guestbook.test.moonjang.net",
+  withCredentials: true,
+    headers: {
       Authorization : 'bearer accessKey',
       'Accept': 'application/json',
       'Content-Type': 'application/json',
@@ -14,17 +14,42 @@ import styles from './App.css';
   }); 
   const st = classNames.bind(styles);
 class InputForm extends React.Component {
+  handleSubmit =event =>{
+    event.preventDefault();
+    const form =document.querySelector('#writeForm');
+    const formData = new FormData(form);
+    const postData = {};
+    formData.forEach((value, key) => {postData[key] = value});
+    const json = JSON.stringify(postData);
+     setTimeout(api.post("/write",json)
+     .then(
+      res => {
+        console.log(res);
+        form.reset();
+    }),1000);
+  };
+    /* .then(
+    res =>{ 
+      console.log("then test");
+      api.post("/read",{"page" : 1}).then(
+        res => {
+          console.log(res);
+          this.setState({contents : res.data});
+        }
+      );
+    }) */
   render() {
+    console.log(this.props);
     return (
       <div className="InputFrom-wrapper">
-        <form>
+        <form id="writeForm" onSubmit={this.handleSubmit}>
           <div className="row">
             <div className={st('col-md-3','input-idPw-area')}>
-              <input type="text" placeholder="닉네임"></input>
-              <input type="password" placeholder="비밀번호"></input>
+              <input type="text" name="name" placeholder="닉네임" required></input>
+              <input type="password" name="password"placeholder="비밀번호" required></input>
             </div>
             <div className={st('col-md-9','input-text-area','custom')}>
-              <input type="textarea" placeholder="text"></input>
+              <input type="textarea" name="contents" placeholder="text" required></input>
             </div>
             <div className={st('col-md-12','register-btn-area')}>
               <button type="submit" id="btn-register">등록</button>
@@ -49,7 +74,7 @@ class Paging extends React.Component{
       <div className="Paging-wrapper">
         <ul>
           <li><button>[{this.props.curPage}]</button></li>
-          <li><button onClick={this.clickPage(2)}>[{this.props.curPage+1}]</button></li>
+          <li><button>[{this.props.curPage+1}]</button></li>
           <li><button>[{this.props.curPage+2}]</button></li>
         </ul>
       </div>
@@ -73,18 +98,18 @@ class Guestbook extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      contents: Array(10).fill({}),
+      contents: [],
       curPage : 1,
       maxPage : 99,
     };
-  }
-  componentDidMount(){
-    /* api.post("/read",{"page" : 1}).then(
+    api.post("/read",{"page" : 1}).then(
       res => {
         this.setState({contents : res.data});
       }
-    );  */
-      fetch('https://guestbook.test.moonjang.net/read', {
+    );
+  }
+  componentDidMount(){ 
+      /* fetch('https://guestbook.test.moonjang.net/read', {
       method: 'POST',
       headers: {
         'Accept': 'application/json',
@@ -95,21 +120,30 @@ class Guestbook extends React.Component {
         'abcd' : '1234',
       },
       body: JSON.stringify({page : 3})
-    }).then(res =>  this.setState({contents : res.data}));
+    }).then(res =>  this.setState({contents : res.data})); */
+    const test = () => {
+      console.log(this.state.contents[0]);
+    };
   }
+  
   
   render() {
     const contents = this.state.contents;
-    const setPosts = contents.map( (cts,idx) => {
-      return (<Posts
-          contents = {cts}
-          bno = {idx+1}
-          key = {idx}
-      />);
-    });  
+    let setPosts = null;
+    if(contents.length !== 0){
+      setPosts = contents.map( (cts,idx) => {
+        return (<Posts
+            contents = {cts}
+            bno = {idx+1}
+            key = {idx}
+        />);
+      });
+    }
     return (
       <div className={st('col-md-10','context','custom')}>     
-        <InputForm/>
+        <InputForm
+          contents = {this.state.contents}
+        />
         <div className="Board-wrapper">
           <div className='row head-area'>
             <div className={st('col-md-2','bno','custom')}>번호</div>
